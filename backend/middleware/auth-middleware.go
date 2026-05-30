@@ -9,10 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// AuthMiddleware checks the Authorization header against the API_KEY env var.
-// The client sends "Authorization: Bearer <key>". If API_KEY is unset, auth is
-// skipped (useful for local dev). subtle.ConstantTimeCompare avoids leaking
-// timing information about the expected key.
 func (m *Middleware) AuthMiddleware() gin.HandlerFunc {
 	expected := os.Getenv("API_KEY")
 

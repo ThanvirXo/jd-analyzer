@@ -67,5 +67,6 @@ func (a *App) SetupRoutes() *App{
 	handler:=a.Handler
 	jdMatchAnalyzer:=router.Group("/api")
 	jdMatchAnalyzer.POST("/analyze", handler.Analyze)
+	jdMatchAnalyzer.GET("/health", handler.HealthCheck)
 	return a
 }

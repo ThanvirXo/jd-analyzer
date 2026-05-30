@@ -22,3 +22,12 @@ func (h *Handler) Analyze(c *gin.Context) {
 
 	common.NewResponse(status, "Analyzed successfully").SetData(data).Respond(c)
 }
+
+func (h *Handler) HealthCheck(c *gin.Context) {
+	status, err := h.Services.HealthCheck(c)
+	if err != nil {
+		common.NewResponse(common.ERROR, err.Error()).Respond(c)
+		return
+	}
+	common.NewResponse(status, "Health check successful").Respond(c)
+}

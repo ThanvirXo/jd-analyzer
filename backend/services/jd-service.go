@@ -22,3 +22,8 @@ func (s *Service) Analyze(c *gin.Context,body requests.AnalyzeRequest) (status c
 
 	return common.SUCCESS, analyzeResult, nil
 }
+
+
+func (s *Service) HealthCheck(c *gin.Context) (status common.ResponseType, err error) {
+	return common.SUCCESS, nil
+}
