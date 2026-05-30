@@ -106,10 +106,6 @@ jd-analysis/
     └── privacy-policy.html
 ```
 
-## Live backend
-
-`https://jd-analyzer-i2dk.onrender.com/api/health`
-
 ---
 
 Built in a weekend · WXT + React + TypeScript + Go + LLM
